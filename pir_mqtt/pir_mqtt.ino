@@ -1,16 +1,7 @@
 /*
- Basic MQTT example
+Connecting to a broker and subscribe to the topic "test".
+Then if a motion detected publish this event.
 
- This sketch demonstrates the basic capabilities of the library.
- It connects to an MQTT server then:
-  - publishes "hello world" to the topic "outTopic"
-  - subscribes to the topic "inTopic", printing out any messages
-    it receives. NB - it assumes the received payloads are strings not binary
-
- It will reconnect to the server if the connection is lost using a blocking
- reconnect function. See the 'mqtt_reconnect_nonblocking' example for how to
- achieve the same result without blocking the main loop.
- 
 */
 
 #include <SPI.h>
@@ -20,9 +11,11 @@
 // Update these with values suitable for your network.
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xEF }; 
 //byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; from examples web server
+//ip of ethernet shield (you can see this from your router ) 
 IPAddress ip(192, 168, 1, 77);
 //IPAddress server(172, 16, 0, 2);
 //iot.eclipse.org=198.41.30.241
+//Broker's ip address
 IPAddress server(192,168,1,68);
 int ledPin = 13;
 int pirPin = 9;
